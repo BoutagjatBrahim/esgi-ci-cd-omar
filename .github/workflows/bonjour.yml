@@ -10,6 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
       - uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile
       - run: docker image build --tag="${IMAGE_NAME}" ./
       # Uncomment to validate your work (should fail the next step)
       # - run: echo 'Hello Error' > ./index.js
